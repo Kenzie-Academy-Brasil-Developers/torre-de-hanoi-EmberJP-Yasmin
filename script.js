@@ -23,6 +23,21 @@ function condicaoVitoria(event){
     }
 }
 
+//funcao que faz um contador de movimentos
+function contadorMovimentos(){
+  const movimentos = document.querySelector('#movimentos'); 
+  const contar = document.createElement('p')
+  
+  let contador = 0 
+    if(click === 1){
+        contador++
+        contar.innerText = `${contador}`
+        movimentos.appendChild(contar)
+    }
+
+}contadorMovimentos()
+
+
 
 //funcçao que mostra o resultado da vitoria
 function result(value){
@@ -35,6 +50,8 @@ function result(value){
     const disc1 = document.querySelector('#ring--1');
     const disc2 = document.querySelector('#ring--2');
     const disc3 = document.querySelector('#ring--3');
+    const disc4 = document.querySelector('#ring--4');
+    const disc5 = document.querySelector('#ring--5');
 
     const reset = document.getElementById('reset');
     reset.addEventListener('click',resetGame)

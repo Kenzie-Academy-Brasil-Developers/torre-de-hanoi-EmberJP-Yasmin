@@ -39,3 +39,8 @@ html {
 button{
     margin: 30px auto;
 }
+
+#movimentos{
+    text-align:center;
+    margin: 20px;
+}
