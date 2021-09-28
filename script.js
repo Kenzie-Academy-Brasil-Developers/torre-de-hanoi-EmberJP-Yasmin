@@ -9,7 +9,6 @@ function createRings() {
         const ring = document.createElement('div')
         ring.id = `ring--${i}`
         tower.appendChild(ring)
-        console.log(ring.id)
     }
 }
 
