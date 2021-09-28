@@ -1,5 +1,6 @@
 let tower1, tower2, tower3 = []
 let rings = 3
+let moveFrom, moveTo = ''
 
 
 // Emerson
@@ -12,6 +13,36 @@ function createRings() {
     }
 }
 
+
+function moves(event) {
+    if (moveFrom === undefined) {
+        moveFrom = event.currentTarget
+        if (moveFrom.childElementCount === 0) {
+            moveFrom = undefined
+            console.log('Essa torre está vazia. Escolha outra.')
+        }
+    }
+    else {
+        moveTo = event.currentTarget
+        /* verificar aqui se o disco de moveFrom é menor que o disco de moveTo*/
+        const tower = document.getElementById(moveTo.id)
+        const ring = document.getElementById(moveFrom.id).lastElementChild
+        tower.appendChild(ring)
+        const towerFrom = document.getElementById(moveFrom)
+        towerFrom.removeChild(ring)
+        moveFrom = ''
+        moveTo = ''
+    }
+}
+
+
+createRings()
+
+const towers = document.querySelectorAll('#container > div')
+
+for (let i = 0; i < towers.length; i++) {
+    towers[i].addEventListener('click', moves)
+}
 
 
 // Yasmin
