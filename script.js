@@ -10,7 +10,7 @@ function createRings() {
         ring.id = `ring--${i}`
         tower.appendChild(ring)
     }
-}
+}createRings()
 
 
 
@@ -57,20 +57,19 @@ function result(value){
     vitoria.appendChild(resultVitoria);
 }
 
-    const disc1 = document.querySelector('#ring--1');
-    const disc2 = document.querySelector('#ring--2');
-    const disc3 = document.querySelector('#ring--3');
-    const disc4 = document.querySelector('#ring--4');
-    const disc5 = document.querySelector('#ring--5');
-
     const reset = document.getElementById('reset');
     reset.addEventListener('click',resetGame)
 
 //funcao que reseta o jogo
 function resetGame(){
     document.getElementById('vitoria').innerHTML = '';
-    const tower1 = document.querySelector('#tower--1');
-    tower1.appendChild(disc1);
-    tower1.appendChild(disc2);
-    tower1.appendChild(disc3);
-}
+    for (let i = rings; i > 0; i--) {
+    const tower = document.getElementById('tower--1');
+    const ring = document.createElement('div');
+    ring.innerHTML = ''
+    ring.id = 'ring--'+i
+    tower.appendChild(ring)
+    console.log(tower)
+    }
+    
+}resetGame()
