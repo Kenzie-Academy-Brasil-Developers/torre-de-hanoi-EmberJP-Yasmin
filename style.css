@@ -42,15 +42,17 @@ background-position-y: center;
     background-image: url(./torre.png);
     background-position-x: center;
     background-position-y: center;
+    background-repeat: no-repeat;
 }
 #ring--1, #ring--2, #ring--3, #ring--4, #ring--5{
     position: relative;
-    animation: disco 5s;
+    animation: disco 1s;
 }
 @keyframes disco{
 0%{bottom: 70px};
 100%{top: -40px};
 }
+
 #ring--1 {
     background-color: red;
     width: 30%;
@@ -89,7 +91,18 @@ background-position-y: center;
 
 
 /* Yasmin */
-
+header{
+    padding: 5px;
+    text-align: center;
+    background-color: tomato;
+    color: white;
+}
+h1{
+    max-width: 230px;
+    margin: 30px auto;
+    font-size: 30px;
+    
+}
 button{
     margin: 30px 40%;
 }
@@ -99,7 +112,6 @@ button{
     margin: 20px;
 }
 #contar{
-    border: 2px solid black;
     padding: 5px 15px;
     font-weight: 1000;
     color: black;
@@ -107,6 +119,7 @@ button{
 }
 
 .modal {
+    margin: 0 auto;
     top: 0;
     right: 0;
     bottom: 0;
@@ -121,6 +134,7 @@ button{
     background: rgba(19, 0, 191, 0.8);
     color: white;  
     text-align: center;
+    padding: 20px;
   }
 
 
