@@ -142,7 +142,7 @@ button:hover{
     
   }
   #abrirModal p{
-      border-radius: 10px;
+    border-radius: 10px;
     background: rgba(0, 191, 191, 0.8);
     color: white;  
     text-align: center;
