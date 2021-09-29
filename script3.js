@@ -1,4 +1,4 @@
-let rings = 3
+let rings = 5
 let moveFrom = ''
 let moveTo = ''
 let count = 0
