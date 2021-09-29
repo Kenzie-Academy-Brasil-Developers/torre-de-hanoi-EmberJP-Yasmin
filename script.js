@@ -1,6 +1,6 @@
 let rings = 3
 let moveFrom, moveTo = ''
-
+let count = 0
 
 // Emerson
 function createRings() {
@@ -10,7 +10,7 @@ function createRings() {
         ring.id = `ring--${i}`
         tower.appendChild(ring)
     }
-}createRings()
+}
 
 
 function moves(event) {
@@ -18,21 +18,41 @@ function moves(event) {
         moveFrom = event.currentTarget
         if (moveFrom.childElementCount === 0) {
             moveFrom = undefined
-            console.log('Essa torre está vazia. Escolha outra.')
+           result('Essa torre está vazia. Escolha outra.')
         }
     }
     else {
         moveTo = event.currentTarget
         if (moveTo.childElementCount > 0 &&
             moveTo.lastElementChild.id < moveFrom.lastElementChild.id) {
-            console.log('Você não pode colocar um anel menor sobre um maior. Tente novamente')
+            result('Você não pode colocar um anel menor sobre um maior. Tente novamente')
+            count += 0
         }
         else {
             moveTo.appendChild(moveFrom.lastElementChild)
+            count++
             moveFrom = ''
+
+            let towerAtual = event.currentTarget;
+            const tower = document.getElementById('tower--3')
+            let quantidadeRing = event.target.childElementCount;
+            
+            if(towerAtual === tower && quantidadeRing === rings){
+                result('Parabens!! Voce venceu');
+                document.getElementById('vitoria').innerHTML = '';
+                result('Click em RESET para um novo Jogo!');
+            }
+            const movimentos = document.querySelector('#movimentos'); 
+            const contar = document.getElementById('contar');
+            contar.innerText = count ;
+            movimentos.appendChild(contar) ;   
         }
+            
+        }
+    
+      
     }
-}
+
 
 
 createRings()
@@ -46,39 +66,6 @@ for (let i = 0; i < towers.length; i++) {
 
 // Yasmin
 
-//funcao que mostra se o jogador ganhou ou não
-let click = 0
-function condicaoVitoria(event){
-    let towerAtual = event.currentTarget.getElementById;
-    let quantidadeRing = event.target.childElementCount;
-     
-    if( towerAtual === 'tower3' && quantidadeRing === 4){
-        result('Parabens!! Voce venceu');
-    
-        if(click === 1){
-            document.getElementById('vitoria').innerHTML = '';
-            result('Click em RESET para um novo Jogo!');
-            click = 0;
-        }    
-    }
-}
-
-//funcao que faz um contador de movimentos
-function contadorMovimentos(){
-  const movimentos = document.querySelector('#movimentos'); 
-  const contar = document.createElement('p')
-  
-  let contador = 0 
-    if(click === 1){
-        contador++
-        contar.innerText = `${contador}`
-        movimentos.appendChild(contar)
-    }
-
-}contadorMovimentos()
-
-
-
 //funcçao que mostra o resultado da vitoria
 function result(value){
     const vitoria = document.getElementById('vitoria');
@@ -87,6 +74,8 @@ function result(value){
     vitoria.appendChild(resultVitoria);
 }
 
+
+
     const reset = document.getElementById('reset');
     reset.addEventListener('click',resetGame)
 
@@ -94,12 +83,12 @@ function result(value){
 function resetGame(){
     document.getElementById('vitoria').innerHTML = '';
     for (let i = rings; i > 0; i--) {
-    const tower = document.getElementById('tower--1');
-    const ring = document.createElement('div');
-    ring.innerHTML = ''
-    ring.id = 'ring--'+i
-    tower.appendChild(ring)
-    console.log(tower)
+    const tower = document.getElementById('tower--1').innerHTML = '';
+    const tower2 = document.getElementById('tower--2').innerHTML = '';
+    const tower3 = document.getElementById('tower--3').innerHTML = '';
+ 
+    
+    createRings()
     }
     
 }resetGame()
