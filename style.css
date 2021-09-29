@@ -32,7 +32,15 @@ html {
 #tower--3 {
     
 }
-
+#ring--1, #ring--2, #ring--3, #ring--4, #ring--5{
+    position: relative;
+    
+    animation: disco 10s;
+}
+@keyframes disco{
+0%{bottom: 50px};
+100%{top: -40px};
+}
 #ring--1 {
     background-color: red;
     width: 30%;
