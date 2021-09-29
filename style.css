@@ -5,12 +5,12 @@ html {
 
 /* Emerson */
 body{
-    background-color: rgb(11, 27, 247);
+    background-image: linear-gradient(to right, #5035af, #6767ec);
 }
 #container {
     margin: 0 auto;
     width: 90%;
-    background-color: rgba(0, 255, 255, 0.623);
+    background-image: linear-gradient(to right, #38f1ba, #d6f173);
     padding: 20px 0 5px 0;
     height: 60vh;
     border-radius: 10px;
@@ -104,7 +104,7 @@ background-position-y: center;
 header{
     padding: 5px;
     text-align: center;
-    background-color: tomato;
+    background-image: linear-gradient(to right, #ff1e00, #ff5177);
     color: white;
 }
 h1{
@@ -147,7 +147,7 @@ button:hover{
     
   }
   #abrirModal p{
-      border-radius: 10px;
+    border-radius: 10px;
     background: rgba(0, 191, 191, 0.8);
     color: white;  
     text-align: center;
