@@ -41,7 +41,7 @@ function moves(event) {
             const tower = document.getElementById('tower--1')
             if(moveTo !== tower && moveTo.childElementCount == rings){
                 result('Parabens!! Voce venceu');
-                
+             
             }
             
            contar(count)
