@@ -17,8 +17,10 @@ function createRings() {
 function moves(event) {
     if (moveFrom === '') {
         moveFrom = event.currentTarget
+        console.log(moveFrom)
         if (moveFrom.childElementCount === 0) {
             moveFrom = ''
+            
            result('Essa torre está vazia. Escolha outra.')
         }
     }
@@ -35,6 +37,7 @@ function moves(event) {
             moveTo.appendChild(moveFrom.lastElementChild)
             count++
             moveFrom = ''
+            
             const tower = document.getElementById('tower--1')
             if(moveTo !== tower && moveTo.childElementCount == rings){
                 result('Parabens!! Voce venceu');
