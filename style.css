@@ -159,15 +159,14 @@ button:hover{
 
     #container {
         flex-direction: row;
+        height: 50vh;
     }
 
     #container > div {
-        height: 60vh;
+        height: 50vh;
     }
 
     #container > div > div {
         height: 8vh;
     }
 }
- 
-
