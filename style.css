@@ -77,6 +77,13 @@ button{
 }
 
 #movimentos{
+    padding: 10px 5px;
+    border: 2px solid black;
     text-align:center;
     margin: 20px;
+}
+#contar{
+    font-weight: 1000;
+    color: black;
+    text-align: center;
 }
