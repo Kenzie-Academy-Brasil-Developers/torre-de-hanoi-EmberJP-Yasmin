@@ -1,4 +1,3 @@
-let tower1, tower2, tower3 = []
 let rings = 3
 let moveFrom, moveTo = ''
 
@@ -15,7 +14,7 @@ function createRings() {
 
 
 function moves(event) {
-    if (moveFrom === undefined) {
+    if (moveFrom === '' || moveFrom === undefined) {
         moveFrom = event.currentTarget
         if (moveFrom.childElementCount === 0) {
             moveFrom = undefined
@@ -24,14 +23,14 @@ function moves(event) {
     }
     else {
         moveTo = event.currentTarget
-        /* verificar aqui se o disco de moveFrom é menor que o disco de moveTo*/
-        const tower = document.getElementById(moveTo.id)
-        const ring = document.getElementById(moveFrom.id).lastElementChild
-        tower.appendChild(ring)
-        const towerFrom = document.getElementById(moveFrom)
-        towerFrom.removeChild(ring)
-        moveFrom = ''
-        moveTo = ''
+        if (moveTo.childElementCount > 0 &&
+            moveTo.lastElementChild.id < moveFrom.lastElementChild.id) {
+            console.log('Você não pode colocar um anel menor sobre um maior. Tente novamente')
+        }
+        else {
+            moveTo.appendChild(moveFrom.lastElementChild)
+            moveFrom = ''
+        }
     }
 }
 
