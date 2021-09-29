@@ -77,13 +77,32 @@ button{
 }
 
 #movimentos{
-    padding: 10px 5px;
-    border: 2px solid black;
+    
+    
     text-align:center;
     margin: 20px;
 }
 #contar{
+    border: 2px solid black;
+    padding: 5px 15px;
     font-weight: 1000;
     color: black;
     text-align: center;
 }
+.modal {
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: rgba(19, 0, 191, 0.8);
+    z-index: 4;
+    
+  }
+  #abrirModal p{
+    color: white;  
+    text-align: center;
+  }
+ 

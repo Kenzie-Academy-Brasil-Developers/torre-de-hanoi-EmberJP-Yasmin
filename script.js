@@ -35,10 +35,10 @@ function moves(event) {
             moveTo.appendChild(moveFrom.lastElementChild)
             count++
             moveFrom = ''
-            
-            if(moveTo.childElementCount == rings){
-                console.log('Parabens!! Voce venceu');
-                document.getElementById('vitoria').innerHTML = '';   
+            const tower = document.getElementById('tower--1')
+            if(moveTo !== tower && moveTo.childElementCount == rings){
+                result('Parabens!! Voce venceu');
+                
             }
             
            contar(count)
@@ -64,23 +64,29 @@ for (let i = 0; i < towers.length; i++) {
 //contar movimentos
 function contar(count){
     const movimentos = document.querySelector('#movimentos'); 
-    const contar = document.getElementById('contar');
-    contar.innerText = count ;
-    movimentos.appendChild(contar) ;   
+    const contarMovimento = document.getElementById('contar');
+    contarMovimento.innerText = count ;
+    movimentos.appendChild(contarMovimento) ;   
 }
 
-//funcçao que mostra o resultado da vitoria
+
 function result(value){
-    const vitoria = document.getElementById('vitoria');
-    const resultVitoria = document.createElement('p');
-    resultVitoria.innerText = `${value}`;
-    vitoria.appendChild(resultVitoria);
+    const Modal = document.getElementById('abrirModal');
+    const VitoriaModal = document.getElementById('p');
+    VitoriaModal.innerText = `${value}`;
+    Modal.appendChild(VitoriaModal);
 }
 
 const reset = document.getElementById('reset');
 reset.addEventListener('click',resetGame)
 //funcao que reseta o jogo
 function resetGame(){
-    document.getElementById('vitoria').innerHTML = '';
+    const tower1 = document.getElementById('tower--1').innerHTML = '';
+    const tower2 = document.getElementById('tower--2').innerHTML = '';
+    const tower3 = document.getElementById('tower--3').innerHTML = '';
+    const abrirModal = document.getElementById('p').innerText = '';
+    count = 0
+    contar(count)
+    createRings()
 
 }
