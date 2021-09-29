@@ -1,5 +1,6 @@
 let rings = 3
-let moveFrom, moveTo = ''
+let moveFrom = ''
+let moveTo = ''
 let count = 0
 
 // Emerson
@@ -14,10 +15,10 @@ function createRings() {
 
 
 function moves(event) {
-    if (moveFrom === '' || moveFrom === undefined) {
+    if (moveFrom === '') {
         moveFrom = event.currentTarget
         if (moveFrom.childElementCount === 0) {
-            moveFrom = undefined
+            moveFrom = ''
            result('Essa torre está vazia. Escolha outra.')
         }
     }
@@ -67,6 +68,7 @@ function contar(count){
     contar.innerText = count ;
     movimentos.appendChild(contar) ;   
 }
+
 //funcçao que mostra o resultado da vitoria
 function result(value){
     const vitoria = document.getElementById('vitoria');
@@ -80,10 +82,5 @@ reset.addEventListener('click',resetGame)
 //funcao que reseta o jogo
 function resetGame(){
     document.getElementById('vitoria').innerHTML = '';
-    const tower1 = document.getElementById('tower--1').innerHTML = '';
-    const tower2 = document.getElementById('tower--2').innerHTML = '';
-    const tower3 = document.getElementById('tower--3').innerHTML = '';
-    count = 0
-    contar(count)
-    createRings()
+
 }
