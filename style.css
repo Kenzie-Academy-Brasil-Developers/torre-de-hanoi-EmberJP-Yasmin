@@ -59,35 +59,40 @@ background-position-y: center;
 
 
 #ring--1 {
-    background-color: red;
+    background-image: linear-gradient(to right, #ff0000, #ff6060);
+    border-radius: 8px;
     width: 30%;
     height: 4vh;
     margin: 0 auto;
 }
 
 #ring--2 {
-    background-color: orange;
+    background-image: linear-gradient(to right, #ffa500, #ffd530);
+    border-radius: 8px;
     width: 45%;
     height: 4vh;
     margin: 0 auto;
 }
 
 #ring--3 {
-    background-color: yellow;
+    background-image: linear-gradient(to right, #ffff00, #ffff60);
+    border-radius: 8px;
     width: 60%;
     height: 4vh;
     margin: 0 auto;
 }
 
 #ring--4 {
-    background-color: green;
+    background-image: linear-gradient(to right, #00ff00, #60ff60);
+    border-radius: 8px;
     width: 75%;
     height: 4vh;
     margin: 0 auto;
 }
 
 #ring--5 {
-    background-color: blue;
+    background-image: linear-gradient(to right, #0000ff, #6060ff);
+    border-radius: 8px;
     width: 90%;
     height: 4vh;
     margin: 0 auto;
