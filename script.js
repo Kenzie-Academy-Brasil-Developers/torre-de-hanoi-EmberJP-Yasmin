@@ -41,8 +41,14 @@ function moves(event) {
             const tower = document.getElementById('tower--1')
             if(moveTo !== tower && moveTo.childElementCount == rings){
                 result('Parabens!! Voce venceu');
-             
+                
+
+                if(disco.classList != 'disco')
+                disco.classList.add('disco')
             }
+            setTimeout(function(){
+                disco.classList.remove('disco')
+            },500)
             
            contar(count)
         }
@@ -51,7 +57,6 @@ function moves(event) {
     
       
     }
-
 
 
 createRings()
