@@ -1,6 +1,6 @@
 let rings = 3
-let moveFrom, moveTo = ''
-
+let moveFrom = ''
+let moveTo = ''
 
 // Emerson
 function createRings() {
@@ -10,14 +10,14 @@ function createRings() {
         ring.id = `ring--${i}`
         tower.appendChild(ring)
     }
-}createRings()
+}
 
 
 function moves(event) {
-    if (moveFrom === '' || moveFrom === undefined) {
+    if (moveFrom === '') {
         moveFrom = event.currentTarget
         if (moveFrom.childElementCount === 0) {
-            moveFrom = undefined
+            moveFrom = ''
             console.log('Essa torre está vazia. Escolha outra.')
         }
     }
@@ -75,7 +75,7 @@ function contadorMovimentos(){
         movimentos.appendChild(contar)
     }
 
-}contadorMovimentos()
+}
 
 
 
@@ -102,4 +102,4 @@ function resetGame(){
     console.log(tower)
     }
     
-}resetGame()
+}
