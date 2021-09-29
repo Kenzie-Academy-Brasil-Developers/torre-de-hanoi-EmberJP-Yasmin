@@ -23,32 +23,27 @@ function moves(event) {
     }
     else {
         moveTo = event.currentTarget
+        
         if (moveTo.childElementCount > 0 &&
             moveTo.lastElementChild.id < moveFrom.lastElementChild.id) {
             result('Você não pode colocar um anel menor sobre um maior. Tente novamente')
-            count += 0
-        }
+          
+        } 
+       
         else {
             moveTo.appendChild(moveFrom.lastElementChild)
             count++
             moveFrom = ''
-
-            let towerAtual = event.currentTarget;
-            const tower = document.getElementById('tower--3')
-            let quantidadeRing = event.target.childElementCount;
             
-            if(towerAtual === tower && quantidadeRing === rings){
-                result('Parabens!! Voce venceu');
-                document.getElementById('vitoria').innerHTML = '';
-                result('Click em RESET para um novo Jogo!');
+            if(moveTo.childElementCount == rings){
+                console.log('Parabens!! Voce venceu');
+                document.getElementById('vitoria').innerHTML = '';   
             }
-            const movimentos = document.querySelector('#movimentos'); 
-            const contar = document.getElementById('contar');
-            contar.innerText = count ;
-            movimentos.appendChild(contar) ;   
+            
+           contar(count)
         }
             
-        }
+    }
     
       
     }
@@ -65,7 +60,13 @@ for (let i = 0; i < towers.length; i++) {
 
 
 // Yasmin
-
+//contar movimentos
+function contar(count){
+    const movimentos = document.querySelector('#movimentos'); 
+    const contar = document.getElementById('contar');
+    contar.innerText = count ;
+    movimentos.appendChild(contar) ;   
+}
 //funcçao que mostra o resultado da vitoria
 function result(value){
     const vitoria = document.getElementById('vitoria');
@@ -74,21 +75,15 @@ function result(value){
     vitoria.appendChild(resultVitoria);
 }
 
-
-
-    const reset = document.getElementById('reset');
-    reset.addEventListener('click',resetGame)
-
+const reset = document.getElementById('reset');
+reset.addEventListener('click',resetGame)
 //funcao que reseta o jogo
 function resetGame(){
     document.getElementById('vitoria').innerHTML = '';
-    for (let i = rings; i > 0; i--) {
-    const tower = document.getElementById('tower--1').innerHTML = '';
+    const tower1 = document.getElementById('tower--1').innerHTML = '';
     const tower2 = document.getElementById('tower--2').innerHTML = '';
     const tower3 = document.getElementById('tower--3').innerHTML = '';
- 
-    
+    count = 0
+    contar(count)
     createRings()
-    }
-    
-}resetGame()
+}
