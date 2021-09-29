@@ -1,5 +1,6 @@
 let rings = 3
-let moveFrom, moveTo = ''
+let moveFrom = ''
+let moveTo = ''
 let count = 0
 
 // Emerson
@@ -14,10 +15,10 @@ function createRings() {
 
 
 function moves(event) {
-    if (moveFrom === '' || moveFrom === undefined) {
+    if (moveFrom === '') {
         moveFrom = event.currentTarget
         if (moveFrom.childElementCount === 0) {
-            moveFrom = undefined
+            moveFrom = ''
            result('Essa torre está vazia. Escolha outra.')
         }
     }
@@ -68,6 +69,7 @@ function contar(count){
     movimentos.appendChild(contarMovimento) ;   
 }
 
+
 function result(value){
     const Modal = document.getElementById('abrirModal');
     const VitoriaModal = document.getElementById('p');
@@ -86,4 +88,5 @@ function resetGame(){
     count = 0
     contar(count)
     createRings()
+
 }
