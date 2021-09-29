@@ -113,6 +113,15 @@ h1{
     font-size: 30px;
     
 }
+section#nivel{
+   
+    display: flex;
+    justify-content: space-around;
+}
+#disco3{ margin: 10px;}
+#disco4{margin: 10px;}
+#disco5{margin: 10px;}
+
 button{
     margin: 30px 45%;
     padding: 10px 20px;
