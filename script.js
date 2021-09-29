@@ -17,7 +17,7 @@ function createRings() {
 function moves(event) {
     if (moveFrom === '') {
         moveFrom = event.currentTarget
-        console.log(moveFrom)
+      
         if (moveFrom.childElementCount === 0) {
             moveFrom = ''
             
