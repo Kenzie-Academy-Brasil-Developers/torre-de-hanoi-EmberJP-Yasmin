@@ -3,7 +3,6 @@ let moveFrom = ''
 let moveTo = ''
 let count = 0
 
-// Emerson
 function createRings() {
     for (let i = rings; i > 0; i--) {
         const tower = document.getElementById('tower--1')
@@ -13,14 +12,12 @@ function createRings() {
     }
 }
 
-
 function moves(event) {
     if (moveFrom === '') {
         moveFrom = event.currentTarget
-      
+
         if (moveFrom.childElementCount === 0) {
             moveFrom = ''
-            
            result('Essa torre está vazia. Escolha outra.')
         }
     }
@@ -30,9 +27,7 @@ function moves(event) {
         if (moveTo.childElementCount > 0 &&
             moveTo.lastElementChild.id < moveFrom.lastElementChild.id) {
             result('Você não pode colocar um anel menor sobre um maior. Tente novamente')
-          
-        } 
-       
+        }
         else {
             moveTo.appendChild(moveFrom.lastElementChild)
             count++
@@ -41,7 +36,6 @@ function moves(event) {
             const tower = document.getElementById('tower--1')
             if(moveTo !== tower && moveTo.childElementCount == rings){
                 result('Parabens!! Voce venceu');
-                
 
                 if(disco.classList != 'disco')
                 disco.classList.add('disco')
@@ -52,23 +46,9 @@ function moves(event) {
             
            contar(count)
         }
-            
     }
-    
-      
-    }
-
-
-createRings()
-
-const towers = document.querySelectorAll('#container > div')
-
-for (let i = 0; i < towers.length; i++) {
-    towers[i].addEventListener('click', moves)
 }
 
-
-// Yasmin
 //contar movimentos
 function contar(count){
     const movimentos = document.querySelector('#movimentos'); 
@@ -76,7 +56,6 @@ function contar(count){
     contarMovimento.innerText = count ;
     movimentos.appendChild(contarMovimento) ;   
 }
-
 
 function result(value){
     const Modal = document.getElementById('abrirModal');
@@ -96,5 +75,12 @@ function resetGame(){
     count = 0
     contar(count)
     createRings()
+}
 
+createRings()
+
+const towers = document.querySelectorAll('#container > div')
+
+for (let i = 0; i < towers.length; i++) {
+    towers[i].addEventListener('click', moves)
 }
