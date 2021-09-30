@@ -1,6 +1,6 @@
-html {
+/* html {
     box-sizing: border-box;
-}
+} */
 
 body {
     background-image: linear-gradient(to right, #5035af, #6767ec);
@@ -112,7 +112,7 @@ section#nivel {
 #disco5 {margin: 10px;}
 
 button {
-    margin: 30px 45%;
+    margin: 30px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;

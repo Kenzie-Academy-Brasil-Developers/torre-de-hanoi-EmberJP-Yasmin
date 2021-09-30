@@ -4,7 +4,7 @@ let moveTo = ''
 let count = 0
 
 // Emerson
-const discos = document.querySelectorAll('#disco3','#disco4','disco5')
+
 function createRings() {
     for (let i = rings; i > 0; i--) {
         const tower = document.getElementById('tower--1')
