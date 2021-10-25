@@ -1,0 +1,174 @@
+/* html {
+    box-sizing: border-box;
+} */
+
+body {
+    background-image: linear-gradient(to right, #5035af, #6767ec);
+}
+
+header {
+    padding: 5px;
+    text-align: center;
+    background-image: linear-gradient(to right, #ff1e00, #ff5177);
+    color: white;
+}
+
+h1 {
+    max-width: 230px;
+    margin: 30px auto;
+    font-size: 30px;
+}
+
+#container {
+    margin: 0 auto;
+    width: 90%;
+    background-image: linear-gradient(to right, #38f1ba, #d6f173);
+    padding: 20px 0 5px 0;
+    height: 60vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#container > div {
+    margin: 10px 0;
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: flex-end;
+}
+
+#container>div:hover {
+    cursor: grabbing;
+}
+
+#tower--1 {
+    background-image: url(./torre.png);
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#tower--2 {
+    background-image: url(./torre.png);
+    background-position-x: center;
+    background-position-y: center;
+}
+
+#tower--3 {
+    background-image: url(./torre.png);
+    background-position-x: center;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+#ring--1, #ring--2, #ring--3, #ring--4, #ring--5 {
+    border-radius: 8px;
+    height: 4vh;
+    margin: 0 auto;
+    position: relative;
+    animation: disco 500ms;
+}
+
+@keyframes disco {
+    0%{bottom: 70px};
+    100%{top: -40px};
+}
+
+#ring--1 {
+    background-image: linear-gradient(to right, #ff0000, #ff6060);
+    width: 30%;
+}
+
+#ring--2 {
+    background-image: linear-gradient(to right, #ffa500, #ffd530);
+    width: 45%;
+    
+}
+
+#ring--3 {
+    background-image: linear-gradient(to right, #ffff00, #ffff60);
+    width: 60%;
+}
+
+#ring--4 {
+    background-image: linear-gradient(to right, #00ff00, #60ff60);
+    width: 75%;
+}
+
+#ring--5 {
+    background-image: linear-gradient(to right, #0000ff, #6060ff);
+    width: 90%;
+}
+
+section#nivel {
+    display: flex;
+    justify-content: space-around;
+}
+
+#disco3 {margin: 10px;}
+#disco4 {margin: 10px;}
+#disco5 {margin: 10px;}
+
+button {
+    margin: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(179, 215, 247);
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+#movimentos {
+    text-align:center;
+    margin: 20px;
+}
+
+#contar {
+    padding: 5px 15px;
+    font-weight: 1000;
+    color: black;
+    text-align: center;
+}
+
+.modal {
+    margin: 0 auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 300px;
+    height: 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 4;
+}
+
+#abrirModal p {
+    border-radius: 10px;
+    background: rgba(0, 191, 191, 0.8);
+    color: white;  
+    text-align: center;
+    padding: 20px;
+}
+
+@media (min-width: 480px) {
+
+    #container {
+        flex-direction: row;
+        height: 50vh;
+    }
+
+    #container > div {
+        height: 50vh;
+        margin: 0;
+    }
+
+    #container > div > div {
+        height: 8vh;
+    }
+}

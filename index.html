@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Torre de Hanói</title>
+</head>
+
+<body id="game">
+    <header>
+         <h1>Torre de Hanói</h1>
+    </header>
+   
+    <div id="movimentos">Movimentos
+        <br><br/><span id="contar">0</span>
+    </div>
+<section id="nivel">
+    <a href="./index.html"><button id="disco3">Nivel 1</button></a>
+    <a href="./nivel2.html"><button id="disco4">Nivel 2</button></a>
+    <a href="./nivel3.html"><button id="disco5">Nivel 3</button></a>
+</section>
+
+    <section id="container">
+        <div id="tower--1"></div>
+        <div id="tower--2"></div>
+        <div id="tower--3"></div>
+    </section>
+
+     <section id="funcoes">
+        <button id="reset">Reset</button>
+        <div id="abrirModal" class="modal">
+            <p id="p">As regras são:<br><br/>
+
+                Movimentar uma só peça (disco) de cada vez.
+            <br/> Uma peça maior não pode ficar acima de uma menor.
+            <br/> Não é permitido movimentar uma peça que esteja abaixo de outra.</p>
+            </div>
+    </section>
+
+    <script src="script.js"></script>
+   
+
+</body>
+</html>
